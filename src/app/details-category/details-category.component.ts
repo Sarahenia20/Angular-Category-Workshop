@@ -21,10 +21,7 @@ export class DetailsCategoryComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    // Get the category ID from the URL
     const id = +this.route.snapshot.paramMap.get('id')!;
-    
-    // Find the category by ID
     this.category = this.categories.find(c => c.id === id);
   }
 }
