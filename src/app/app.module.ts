@@ -13,6 +13,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { HighlightDirective } from './highlight.directive';
 import { CategProductComponent } from './categ-product/categ-product.component';
 import { DetailsCategoryComponent } from './details-category/details-category.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DetailsCategoryComponent } from './details-category/details-category.co
     FilterPipe,
     HighlightDirective,
     CategProductComponent,
-    DetailsCategoryComponent
+    DetailsCategoryComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
