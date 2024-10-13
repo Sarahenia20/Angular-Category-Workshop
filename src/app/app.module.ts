@@ -11,9 +11,9 @@ import { ListCategoriesComponent } from './Composants/list-categories/list-categ
 import { HomeComponent } from './Composants/home/home.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { HighlightDirective } from './highlight.directive';
-import { CategProductComponent } from './categ-product/categ-product.component';
 import { DetailsCategoryComponent } from './details-category/details-category.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ProductsCategoryComponent } from './products-category-component/products-category-component';
 
 @NgModule({
   declarations: [
@@ -25,9 +25,9 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HomeComponent,
     FilterPipe,
     HighlightDirective,
-    CategProductComponent,
     DetailsCategoryComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ProductsCategoryComponent
   ],
   imports: [
     BrowserModule,

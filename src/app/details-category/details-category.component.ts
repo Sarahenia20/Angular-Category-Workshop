@@ -8,7 +8,7 @@ import { Categorie } from 'src/app/Models/Categorie';
   styleUrls: ['./details-category.component.css']
 })
 export class DetailsCategoryComponent implements OnInit {
-  category: Categorie | undefined; // The selected category
+  category: Categorie | undefined; 
   categories: Categorie[] = [
     { id: 1, title: 'Grand électroménager', image: 'assets/images/categorie_electromenager.jpg', description: 'Large home appliances', available: true },
     { id: 2, title: 'Petit électroménager', image: 'assets/images/categorie_petit_electromenager.jpg', description: 'Small home appliances', available: true },
