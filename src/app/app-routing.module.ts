@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { FormProductComponent } from './form-product/form-product.component';
-import { FormUserComponent } from './form-user/form-user.component'; // Import the FormProductComponent
+import { FormUserComponent } from './form-user/form-user.component';
 
 const routes: Routes = [
   {

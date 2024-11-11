@@ -1,9 +1,6 @@
 <div class="container mt-3">
   <div class="d-flex justify-content-between align-items-center">
-    <!-- Title -->
     <h2>Browse Products</h2>
-
-    <!-- Search input with real-time filtering (two-way binding) -->
     <div class="input-group w-50">
       <input
         [(ngModel)]="title"
@@ -20,10 +17,7 @@
   </div>
 
   <div class="row mt-4">
-   
-    <div *ngFor="let elt of filteredCategories" class="col-md-4" style="margin-bottom: 20px" appHighlight>
-      
-     
+    <div *ngFor="let elt of filteredCategories" class="col-md-4" style="margin-bottom: 20px">
       <img
         [src]="elt.image"
         alt="{{ elt.title }}"
@@ -31,10 +25,16 @@
         (click)="goToDetails(elt.id)"
       />
       <h3 class="mt-2">{{ elt.title | uppercase }}</h3>
-
-      <!-- Make the button also link to the details page -->
-      <button class="btn modern-btn" *ngIf="elt.available" (click)="goToDetails(elt.id)">Voir Produit</button>
+      
+      <button class="btn modern-btn" *ngIf="elt.available" (click)="goToDetails(elt.id)">
+        Voir Produit
+      </button>
       <p style="color: red;" *ngIf="!elt.available">Produit non disponible</p>
+
+      <!-- Button to add to shortlist -->
+      <button class="btn btn-outline-primary mt-2" (click)="addToShortList(elt)">
+        Add to Shortlist
+      </button>
     </div>
   </div>
 </div>

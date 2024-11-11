@@ -16,6 +16,7 @@ import { AddCategoryComponent } from './add-category/add-category.component';
 import { CategoriesModule } from './categories/categories.module';
 import { FormProductComponent } from './form-product/form-product.component';
 import { FormUserComponent } from './form-user/form-user.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { FormUserComponent } from './form-user/form-user.component';
     NotFoundComponent,
     AddCategoryComponent,
     FormProductComponent,
-    FormUserComponent
+    FormUserComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router'; // Import the router
-import { Categorie } from 'src/app/Models/Categorie';
+import { Router } from '@angular/router';
+import { Categorie } from '../../Models/Categorie';
+import { ShortList } from '../../Models/ShortList'; // Import the ShortList model
 
 @Component({
   selector: 'app-list-categories',
@@ -8,7 +9,7 @@ import { Categorie } from 'src/app/Models/Categorie';
   styleUrls: ['./list-categories.component.css']
 })
 export class ListCategoriesComponent {
-  constructor(private router: Router) {} // Inject Router for navigation
+  constructor(private router: Router) {}
 
   // Categories array
   categories: Categorie[] = [
@@ -22,6 +23,9 @@ export class ListCategoriesComponent {
 
   // Input field value bound to ngModel
   title: string = '';
+
+  // Shortlist array to store shortlisted items
+  shortList: ShortList[] = [];
 
   // Getter to return filtered categories
   get filteredCategories(): Categorie[] {
@@ -37,6 +41,28 @@ export class ListCategoriesComponent {
   // Method to navigate to details page
   goToDetails(id: number) {
     this.router.navigate([`/category/${id}`]); // Navigates to category detail page with the category id
+  }
+
+  // Add category to shortlist with explicit mapping
+  addToShortList(category: Categorie) {
+    const shortListItem: ShortList = {
+        idUser: 1,                
+        idElement: category.id,    
+        typeElement: 'category',   
+        id: category.id,          
+        title: category.title,    
+        image: category.image,    
+        description: category.description, 
+        available: category.available
+    };
+    // Avoid duplicates in the shortlist
+    const isAlreadyInShortlist = this.shortList.some(item => item.idElement === shortListItem.idElement);
+    if (!isAlreadyInShortlist) {
+      this.shortList.push(shortListItem);
+      console.log('Added to shortlist:', shortListItem);
+    } else {
+      console.log('Category is already in shortlist');
+    }
   }
 
   // Example alert for description
